@@ -24,6 +24,116 @@ function isArabianNumb(numb) {
   } else return true;
 }
 
+function makeRomaninanNumber(numb) {
+  let romanNumbers = [
+    "",
+    "I",
+    "II",
+    "III",
+    "IV",
+    "V",
+    "VI",
+    "VII",
+    "VIII",
+    "IX",
+    "X",
+    "XI",
+    "XII",
+    "XIII",
+    "XIV",
+    "XV",
+    "XVI",
+    "XVII",
+    "XVIII",
+    "XIX",
+    "XX",
+    "XXI",
+    "XXII",
+    "XXIII",
+    "XXIV",
+    "XXV",
+    "XXVI",
+    "XXVII",
+    "XXVIII",
+    "XXIX",
+    "XXX",
+    "XXXI",
+    "XXXII",
+    "XXXIII",
+    "XXXIV",
+    "XXXV",
+    "XXXVI",
+    "XXXVII",
+    "XXXVIII",
+    "XXXIX",
+    "XL",
+    "XLI",
+    "XLII",
+    "XLIII",
+    "XLIV",
+    "XLV",
+    "XLVI",
+    "XLVII",
+    "XLVIII",
+    "XLIX",
+    "L",
+    "LI",
+    "LII",
+    "LIII",
+    "LIV",
+    "LV",
+    "LVI",
+    "LVII",
+    "LVIII",
+    "LIX",
+    "LX",
+    "LXI",
+    "LXII",
+    "LXIII",
+    "LXIV",
+    "LXV",
+    "LXVI",
+    "LXVII",
+    "LXVIII",
+    "LXIX",
+    "LXX",
+    "LXXI",
+    "LXXII",
+    "LXXIII",
+    "LXXIV",
+    "LXXV",
+    "LXXVI",
+    "LXXVII",
+    "LXXVIII",
+    "LXXIX",
+    "LXXX",
+    "LXXXI",
+    "LXXXII",
+    "LXXXIII",
+    "LXXXIV",
+    "LXXXV",
+    "LXXXVI",
+    "LXXXVII",
+    "LXXXVIII",
+    "LXXXIX",
+    "XC",
+    "XCI",
+    "XCII",
+    "XCIII",
+    "XCIV",
+    "XCV",
+    "XCVI",
+    "XCVII",
+    "XCVIII",
+    "XCIX",
+    "C",
+  ];
+
+  for (let i = 0; i < romanNumbers.length; i++) {
+    return romanNumbers[numb];
+  }
+}
+
 function calculator(string) {
   let arr = string.split(" ");
 
@@ -44,16 +154,24 @@ function calculator(string) {
     }
     if (!isArabianNumb(elem)) {
       if (arr.includes("+")) {
-        return takeArabicNumber(arr[0]) + takeArabicNumber(arr[2]);
+        return makeRomaninanNumber(
+          takeArabicNumber(arr[0]) + takeArabicNumber(arr[2])
+        );
       }
       if (arr.includes("-")) {
-        return takeArabicNumber(arr[0]) - takeArabicNumber(arr[2]);
+        return makeRomaninanNumber(
+          takeArabicNumber(arr[0]) - takeArabicNumber(arr[2])
+        );
       }
       if (arr.includes("*")) {
-        return takeArabicNumber(arr[0]) * takeArabicNumber(arr[2]);
+        return makeRomaninanNumber(
+          takeArabicNumber(arr[0]) * takeArabicNumber(arr[2])
+        );
       }
       if (arr.includes("/")) {
-        return Math.trunc(takeArabicNumber(arr[0]) / takeArabicNumber(arr[2]));
+        return makeRomaninanNumber(
+          Math.trunc(takeArabicNumber(arr[0]) / takeArabicNumber(arr[2]))
+        );
       }
     }
   }
