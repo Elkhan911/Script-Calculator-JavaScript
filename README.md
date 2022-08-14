@@ -32,3 +32,8 @@ calculate('1 + 1 + 1'); // вернётся исключение throws Error т
 ```
 
 ---
+
+function calculator(string) {
+const symbols = string.split(" ");
+return String(Number(symbols[0]) + Number(symbols[2]));
+}
