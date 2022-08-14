@@ -53,7 +53,7 @@ function calculator(string) {
         return takeArabicNumber(arr[0]) * takeArabicNumber(arr[2]);
       }
       if (arr.includes("/")) {
-        return takeArabicNumber(arr[0]) / takeArabicNumber(arr[2]);
+        return Math.trunc(takeArabicNumber(arr[0]) / takeArabicNumber(arr[2]));
       }
     }
   }
@@ -103,3 +103,9 @@ function calculator(string) {
 // console.log(calculator("IV * X"));
 // console.log(calculator("V * I"));
 // console.log(calculator("V * V"));
+
+// Римское деление
+// console.log(calculator("X / I"));
+// console.log(calculator("VI / II"));
+// console.log(calculator("V / IV"));
+// console.log(calculator("II / IV"));
