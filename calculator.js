@@ -147,19 +147,19 @@ function calculator(string) {
     if (isArabianNumb(elem)) {
       // Сложение десятичных чисел
       if (arr.includes("+")) {
-        return Number(arr[0]) + Number(arr[2]);
+        return String(Number(arr[0]) + Number(arr[2]));
       }
       // Вычитание  десятичных чисел
       if (arr.includes("-")) {
-        return Number(arr[0] - Number(arr[2]));
+        return String(Number(arr[0] - Number(arr[2])));
       }
       // Уможение десятичных чисел
       if (arr.includes("*")) {
-        return Number(arr[0]) * Number(arr[2]);
+        return String(Number(arr[0]) * Number(arr[2]));
       }
       // Деление десятичных чисел
       if (arr.includes("/")) {
-        return Math.trunc(Number(arr[0]) / Number(arr[2]));
+        return String(Math.trunc(Number(arr[0]) / Number(arr[2])));
       }
     }
     // проверяем каждый элемент массива на римские цифры
@@ -197,10 +197,10 @@ function calculator(string) {
 }
 
 // Сложение десятичных чисел
-// console.log(calculator("1 + 1"));
-// console.log(calculator("1 + 2"));
-// console.log(calculator("4 + 3"));
-// console.log(calculator("10 + 10"));
+console.log(calculator("1 + 1"));
+console.log(calculator("1 + 2"));
+console.log(calculator("4 + 3"));
+console.log(calculator("10 + 10"));
 
 // Вычитание  десятичных чисел
 // console.log(calculator("10 - 1"));
