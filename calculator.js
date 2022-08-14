@@ -16,24 +16,46 @@ function takeArabicNumber(romanNumb) {
     return romanNumbers.indexOf(romanNumb);
   }
 }
-console.log(takeArabicNumber("X") + takeArabicNumber("X"));
+
+function isArabianNumb(numb) {
+  let newArr = numb.split("");
+  if (newArr.includes("X") || newArr.includes("I") || newArr.includes("V")) {
+    return false;
+  } else return true;
+}
 
 function calculator(string) {
   let arr = string.split(" ");
-  if (arr.includes("+")) {
-    return Number(arr[0]) + Number(arr[2]);
-  }
-  if (arr.includes("-")) {
-    return Number(arr[0] - Number(arr[2]));
-  }
-  if (arr.includes("*")) {
-    return Number(arr[0]) * Number(arr[2]);
-  }
-  if (arr.includes("/")) {
-    return Math.trunc(Number(arr[0]) / Number(arr[2]));
-  }
-  if (arr.includes("X") || arr.includes("I")) {
-    return takeArabicNumber(arr[0]) + takeArabicNumber(arr[2]);
+
+  for (let elem of arr) {
+    if (isArabianNumb(elem)) {
+      if (arr.includes("+")) {
+        return Number(arr[0]) + Number(arr[2]);
+      }
+      if (arr.includes("-")) {
+        return Number(arr[0] - Number(arr[2]));
+      }
+      if (arr.includes("*")) {
+        return Number(arr[0]) * Number(arr[2]);
+      }
+      if (arr.includes("/")) {
+        return Math.trunc(Number(arr[0]) / Number(arr[2]));
+      }
+    }
+    if (!isArabianNumb(elem)) {
+      if (arr.includes("+")) {
+        return takeArabicNumber(arr[0]) + takeArabicNumber(arr[2]);
+      }
+      if (arr.includes("-")) {
+        return takeArabicNumber(arr[0]) - takeArabicNumber(arr[2]);
+      }
+      if (arr.includes("*")) {
+        return takeArabicNumber(arr[0]) * takeArabicNumber(arr[2]);
+      }
+      if (arr.includes("/")) {
+        return takeArabicNumber(arr[0]) / takeArabicNumber(arr[2]);
+      }
+    }
   }
 }
 
@@ -56,15 +78,28 @@ function calculator(string) {
 // console.log(calculator("5 * 1"));
 // console.log(calculator("5 * 5"));
 
-// Деление
+// Деление ++++
 // console.log(calculator("10 / 1"));
 // console.log(calculator("6 / 2"));
 // console.log(calculator("5 / 4"));
 // console.log(calculator("2 / 4"));
 
-// Римское сложение
+// Римское сложение ++++
 // console.log(calculator("I + I"));
 // console.log(calculator("I + II"));
 // console.log(calculator("IV + III"));
-console.log(calculator("X + X"));
+// console.log(calculator("X + X"));
 // console.log(calculator("X + IX"));
+
+// Римское вычитание ++++
+// console.log(calculator("X - I"));
+// console.log(calculator("V - IV"));
+// console.log(calculator("IV - IV"));
+// console.log(calculator("I - X"));
+// console.log(calculator("IV - V"));
+
+// Римское умножение ++++
+// console.log(calculator("X * X"));
+// console.log(calculator("IV * X"));
+// console.log(calculator("V * I"));
+// console.log(calculator("V * V"));
