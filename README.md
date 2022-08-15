@@ -104,3 +104,5 @@ calculate('1 + 1 + 1'); // вернётся исключение throws Error т
 // console.log(calculator("VI / II"));
 // console.log(calculator("V / IV"));
 // console.log(calculator("II / IV"));
+
+module.exports = calculator; // Не трогайте эту строчку

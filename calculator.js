@@ -1,4 +1,4 @@
-// function to convert Roman numerals from 1 to 10 to Arabic numerals
+// function to convert Roman numerals from 1 to 100 to Arabic numerals
 function takeArabicNumber(romanNumb) {
   let romanNumbers = [
     "",
@@ -112,7 +112,7 @@ function takeArabicNumber(romanNumb) {
 
 // boolean function to determine arabic number or not
 function isArabianNumb(numb) {
-  let newArr = numb.split("");
+  let newArr = String(numb).split("");
   if (newArr.includes("X") || newArr.includes("I") || newArr.includes("V")) {
     return false;
   } else return true;
@@ -231,6 +231,14 @@ function makeRomaninanNumber(numb) {
   } else return romanNumbers[0];
 }
 
+function isItnormalString(string) {
+  let arr = string.split(" ");
+  if (isArabianNumb(arr[0]) !== isArabianNumb(arr[2])) {
+    console.log("нельзя смешивать род переменных");
+    return;
+  }
+}
+
 // main calculator script
 function calculator(string) {
   // проверяем не пустая ли строка
@@ -243,7 +251,6 @@ function calculator(string) {
 
   // переводим аргумент в массив
   let arr = string.split(" ");
-  console.log(arr);
   // проверяем на количество введенных данных
   if (arr.length < 3 || arr.length > 3) {
     console.log(
@@ -323,13 +330,5 @@ function calculator(string) {
         );
       }
     }
-  }
-}
-
-function isItnormalString(string) {
-  let arr = string.split(" ");
-  if (isArabianNumb(arr[0]) !== isArabianNumb(arr[2])) {
-    console.log("нельзя смешивать род переменных");
-    return;
   }
 }
