@@ -262,9 +262,13 @@ function calculator(string) {
       flag = false;
     }
   }
+
+  // если арабские цифры применяем функцию для арабских цифр
   if (flag == true) {
     selectArithmOperatArabian(arr);
   }
+
+  // если римские цифры применяем функцию для римских цифр
   if (flag == false) {
     selectArithmOperatRomanian(arr);
   }
