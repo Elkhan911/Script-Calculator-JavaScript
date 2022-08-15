@@ -106,3 +106,60 @@ calculate('1 + 1 + 1'); // вернётся исключение throws Error т
 // console.log(calculator("II / IV"));
 
 module.exports = calculator; // Не трогайте эту строчку
+
+for (let elem of arr) {
+let flag = true;
+
+    // проверяем каждый элемент массива на арабские цифры
+    if (isArabianNumb(elem)) {
+      // Сложение десятичных чисел
+      if (arr.includes("+")) {
+        return String(Number(arr[0]) + Number(arr[2]));
+      }
+      // Вычитание  десятичных чисел
+      if (arr.includes("-")) {
+        return String(Number(arr[0] - Number(arr[2])));
+      }
+      // Уможение десятичных чисел
+      if (arr.includes("*")) {
+        return String(Number(arr[0]) * Number(arr[2]));
+      }
+      // Деление десятичных чисел
+      if (arr.includes("/")) {
+        return String(Math.trunc(Number(arr[0]) / Number(arr[2])));
+      }
+    }
+
+    // проверяем каждый элемент массива на римские цифры
+    if (!isArabianNumb(elem)) {
+      // Сложение римских чисел
+      if (arr.includes("+")) {
+        // приводим к римскому значению
+        return makeRomaninanNumber(
+          takeArabicNumber(arr[0]) + takeArabicNumber(arr[2])
+        );
+      }
+      // Вычитание римских чисел
+      if (arr.includes("-")) {
+        // приводим к римскому значению
+        return makeRomaninanNumber(
+          takeArabicNumber(arr[0]) - takeArabicNumber(arr[2])
+        );
+      }
+      // Умножение римских чисел
+      if (arr.includes("*")) {
+        // приводим к римскому значению
+        return makeRomaninanNumber(
+          takeArabicNumber(arr[0]) * takeArabicNumber(arr[2])
+        );
+      }
+      // Деление римских чисел
+      if (arr.includes("/")) {
+        // приводим к римскому значению
+        return makeRomaninanNumber(
+          Math.trunc(takeArabicNumber(arr[0]) / takeArabicNumber(arr[2]))
+        );
+      }
+    }
+
+}

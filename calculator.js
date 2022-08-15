@@ -102,7 +102,7 @@ let romanNumbers = [
   "C",
 ];
 
-// function to convert Roman numerals from 1 to 100 to Arabic numerals
+// function to convert Roman digits from 1 to 100 to Arabic digits
 function takeArabicNumber(romanNumb) {
   for (let i = 0; i < romanNumbers.length; i++) {
     if (romanNumbers.includes(romanNumb)) {
@@ -111,7 +111,7 @@ function takeArabicNumber(romanNumb) {
   }
 }
 
-// boolean function to determine arabic number or not
+// boolean function to determine arabic digit or not
 function isArabianNumb(numb) {
   let newArr = String(numb).split("");
   if (newArr.includes("X") || newArr.includes("I") || newArr.includes("V")) {
@@ -119,7 +119,7 @@ function isArabianNumb(numb) {
   } else return true;
 }
 
-// function to convert Roman numerals from 1 to 10 to Arabic numerals
+// function to convert Roman numerals from 1 to 10 to Arabic digits
 function makeRomaninanNumber(numb) {
   if (numb >= 0) {
     for (let i = 0; i < romanNumbers.length; i++) {
@@ -156,7 +156,7 @@ function isItRightLength(array) {
   }
 }
 
-// проверяем нет ли в функции 0 и %
+// проверяем нет ли в массиве недопустимых значений
 function isItAvailable(array, value1, value2) {
   if (array.includes(value1) || array.includes(value2)) {
     console.log("Операции с 0 и % не выполняются");
@@ -164,6 +164,7 @@ function isItAvailable(array, value1, value2) {
   }
 }
 
+// проверяем нет ли цифр больше чем допустимая для задания
 function isItMoreThan(digitsArr, numb) {
   for (let digit of digitsArr) {
     if (isArabianNumb(digit)) {
@@ -178,6 +179,57 @@ function isItMoreThan(digitsArr, numb) {
         return;
       }
     }
+  }
+}
+
+// выбор арифметической операции с арабскими цифрами
+function selectArithmOperatArabian(array) {
+  if (array.includes("+")) {
+    return String(Number(array[0]) + Number(array[2]));
+  }
+  // Вычитание  десятичных чисел
+  if (array.includes("-")) {
+    return String(Number(array[0] - Number(array[2])));
+  }
+  // Уможение десятичных чисел
+  if (array.includes("*")) {
+    return String(Number(array[0]) * Number(array[2]));
+  }
+  // Деление десятичных чисел
+  if (array.includes("/")) {
+    return String(Math.trunc(Number(array[0]) / Number(array[2])));
+  }
+}
+
+// выбор арифметической операции с римскими цифрами
+function selectArithmOperatRomanian(array) {
+  // Сложение римских чисел
+  if (array.includes("+")) {
+    // приводим к римскому значению
+    return makeRomaninanNumber(
+      takeArabicNumber(array[0]) + takeArabicNumber(array[2])
+    );
+  }
+  // Вычитание римских чисел
+  if (array.includes("-")) {
+    // приводим к римскому значению
+    return makeRomaninanNumber(
+      takeArabicNumber(array[0]) - takeArabicNumber(array[2])
+    );
+  }
+  // Умножение римских чисел
+  if (arr.includes("*")) {
+    // приводим к римскому значению
+    return makeRomaninanNumber(
+      takeArabicNumber(array[0]) * takeArabicNumber(array[2])
+    );
+  }
+  // Деление римских чисел
+  if (array.includes("/")) {
+    // приводим к римскому значению
+    return makeRomaninanNumber(
+      Math.trunc(takeArabicNumber(array[0]) / takeArabicNumber(array[2]))
+    );
   }
 }
 
@@ -200,57 +252,22 @@ function calculator(string) {
   // проверяем не больше ли значения 10
   isItMoreThan(arr, 10);
 
-  for (let elem of arr) {
-    // проверяем каждый элемент массива на арабские цифры
-    if (isArabianNumb(elem)) {
-      // Сложение десятичных чисел
-      if (arr.includes("+")) {
-        return String(Number(arr[0]) + Number(arr[2]));
-      }
-      // Вычитание  десятичных чисел
-      if (arr.includes("-")) {
-        return String(Number(arr[0] - Number(arr[2])));
-      }
-      // Уможение десятичных чисел
-      if (arr.includes("*")) {
-        return String(Number(arr[0]) * Number(arr[2]));
-      }
-      // Деление десятичных чисел
-      if (arr.includes("/")) {
-        return String(Math.trunc(Number(arr[0]) / Number(arr[2])));
-      }
-    }
+  // вводим флаг, чтоб понять арабская цифра (true) или римская (false)
+  let flag = true;
 
-    // проверяем каждый элемент массива на римские цифры
-    if (!isArabianNumb(elem)) {
-      // Сложение римских чисел
-      if (arr.includes("+")) {
-        // приводим к римскому значению
-        return makeRomaninanNumber(
-          takeArabicNumber(arr[0]) + takeArabicNumber(arr[2])
-        );
-      }
-      // Вычитание римских чисел
-      if (arr.includes("-")) {
-        // приводим к римскому значению
-        return makeRomaninanNumber(
-          takeArabicNumber(arr[0]) - takeArabicNumber(arr[2])
-        );
-      }
-      // Умножение римских чисел
-      if (arr.includes("*")) {
-        // приводим к римскому значению
-        return makeRomaninanNumber(
-          takeArabicNumber(arr[0]) * takeArabicNumber(arr[2])
-        );
-      }
-      // Деление римских чисел
-      if (arr.includes("/")) {
-        // приводим к римскому значению
-        return makeRomaninanNumber(
-          Math.trunc(takeArabicNumber(arr[0]) / takeArabicNumber(arr[2]))
-        );
-      }
+  for (let elem of arr) {
+    if (isArabianNumb(elem)) {
+      flag = true;
+    } else {
+      flag = false;
     }
   }
+  if (flag == true) {
+    selectArithmOperatArabian(arr);
+  }
+  if (flag == false) {
+    selectArithmOperatRomanian(arr);
+  }
 }
+
+console.log(calculator("10 + 5"));
