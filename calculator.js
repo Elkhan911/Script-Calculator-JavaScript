@@ -1,108 +1,109 @@
+let romanNumbers = [
+  "",
+  "I",
+  "II",
+  "III",
+  "IV",
+  "V",
+  "VI",
+  "VII",
+  "VIII",
+  "IX",
+  "X",
+  "XI",
+  "XII",
+  "XIII",
+  "XIV",
+  "XV",
+  "XVI",
+  "XVII",
+  "XVIII",
+  "XIX",
+  "XX",
+  "XXI",
+  "XXII",
+  "XXIII",
+  "XXIV",
+  "XXV",
+  "XXVI",
+  "XXVII",
+  "XXVIII",
+  "XXIX",
+  "XXX",
+  "XXXI",
+  "XXXII",
+  "XXXIII",
+  "XXXIV",
+  "XXXV",
+  "XXXVI",
+  "XXXVII",
+  "XXXVIII",
+  "XXXIX",
+  "XL",
+  "XLI",
+  "XLII",
+  "XLIII",
+  "XLIV",
+  "XLV",
+  "XLVI",
+  "XLVII",
+  "XLVIII",
+  "XLIX",
+  "L",
+  "LI",
+  "LII",
+  "LIII",
+  "LIV",
+  "LV",
+  "LVI",
+  "LVII",
+  "LVIII",
+  "LIX",
+  "LX",
+  "LXI",
+  "LXII",
+  "LXIII",
+  "LXIV",
+  "LXV",
+  "LXVI",
+  "LXVII",
+  "LXVIII",
+  "LXIX",
+  "LXX",
+  "LXXI",
+  "LXXII",
+  "LXXIII",
+  "LXXIV",
+  "LXXV",
+  "LXXVI",
+  "LXXVII",
+  "LXXVIII",
+  "LXXIX",
+  "LXXX",
+  "LXXXI",
+  "LXXXII",
+  "LXXXIII",
+  "LXXXIV",
+  "LXXXV",
+  "LXXXVI",
+  "LXXXVII",
+  "LXXXVIII",
+  "LXXXIX",
+  "XC",
+  "XCI",
+  "XCII",
+  "XCIII",
+  "XCIV",
+  "XCV",
+  "XCVI",
+  "XCVII",
+  "XCVIII",
+  "XCIX",
+  "C",
+];
+
 // function to convert Roman numerals from 1 to 100 to Arabic numerals
 function takeArabicNumber(romanNumb) {
-  let romanNumbers = [
-    "",
-    "I",
-    "II",
-    "III",
-    "IV",
-    "V",
-    "VI",
-    "VII",
-    "VIII",
-    "IX",
-    "X",
-    "XI",
-    "XII",
-    "XIII",
-    "XIV",
-    "XV",
-    "XVI",
-    "XVII",
-    "XVIII",
-    "XIX",
-    "XX",
-    "XXI",
-    "XXII",
-    "XXIII",
-    "XXIV",
-    "XXV",
-    "XXVI",
-    "XXVII",
-    "XXVIII",
-    "XXIX",
-    "XXX",
-    "XXXI",
-    "XXXII",
-    "XXXIII",
-    "XXXIV",
-    "XXXV",
-    "XXXVI",
-    "XXXVII",
-    "XXXVIII",
-    "XXXIX",
-    "XL",
-    "XLI",
-    "XLII",
-    "XLIII",
-    "XLIV",
-    "XLV",
-    "XLVI",
-    "XLVII",
-    "XLVIII",
-    "XLIX",
-    "L",
-    "LI",
-    "LII",
-    "LIII",
-    "LIV",
-    "LV",
-    "LVI",
-    "LVII",
-    "LVIII",
-    "LIX",
-    "LX",
-    "LXI",
-    "LXII",
-    "LXIII",
-    "LXIV",
-    "LXV",
-    "LXVI",
-    "LXVII",
-    "LXVIII",
-    "LXIX",
-    "LXX",
-    "LXXI",
-    "LXXII",
-    "LXXIII",
-    "LXXIV",
-    "LXXV",
-    "LXXVI",
-    "LXXVII",
-    "LXXVIII",
-    "LXXIX",
-    "LXXX",
-    "LXXXI",
-    "LXXXII",
-    "LXXXIII",
-    "LXXXIV",
-    "LXXXV",
-    "LXXXVI",
-    "LXXXVII",
-    "LXXXVIII",
-    "LXXXIX",
-    "XC",
-    "XCI",
-    "XCII",
-    "XCIII",
-    "XCIV",
-    "XCV",
-    "XCVI",
-    "XCVII",
-    "XCVIII",
-    "XCIX",
-    "C",
-  ];
   for (let i = 0; i < romanNumbers.length; i++) {
     if (romanNumbers.includes(romanNumb)) {
       return romanNumbers.indexOf(romanNumb);
@@ -120,110 +121,6 @@ function isArabianNumb(numb) {
 
 // function to convert Roman numerals from 1 to 10 to Arabic numerals
 function makeRomaninanNumber(numb) {
-  let romanNumbers = [
-    "",
-    "I",
-    "II",
-    "III",
-    "IV",
-    "V",
-    "VI",
-    "VII",
-    "VIII",
-    "IX",
-    "X",
-    "XI",
-    "XII",
-    "XIII",
-    "XIV",
-    "XV",
-    "XVI",
-    "XVII",
-    "XVIII",
-    "XIX",
-    "XX",
-    "XXI",
-    "XXII",
-    "XXIII",
-    "XXIV",
-    "XXV",
-    "XXVI",
-    "XXVII",
-    "XXVIII",
-    "XXIX",
-    "XXX",
-    "XXXI",
-    "XXXII",
-    "XXXIII",
-    "XXXIV",
-    "XXXV",
-    "XXXVI",
-    "XXXVII",
-    "XXXVIII",
-    "XXXIX",
-    "XL",
-    "XLI",
-    "XLII",
-    "XLIII",
-    "XLIV",
-    "XLV",
-    "XLVI",
-    "XLVII",
-    "XLVIII",
-    "XLIX",
-    "L",
-    "LI",
-    "LII",
-    "LIII",
-    "LIV",
-    "LV",
-    "LVI",
-    "LVII",
-    "LVIII",
-    "LIX",
-    "LX",
-    "LXI",
-    "LXII",
-    "LXIII",
-    "LXIV",
-    "LXV",
-    "LXVI",
-    "LXVII",
-    "LXVIII",
-    "LXIX",
-    "LXX",
-    "LXXI",
-    "LXXII",
-    "LXXIII",
-    "LXXIV",
-    "LXXV",
-    "LXXVI",
-    "LXXVII",
-    "LXXVIII",
-    "LXXIX",
-    "LXXX",
-    "LXXXI",
-    "LXXXII",
-    "LXXXIII",
-    "LXXXIV",
-    "LXXXV",
-    "LXXXVI",
-    "LXXXVII",
-    "LXXXVIII",
-    "LXXXIX",
-    "XC",
-    "XCI",
-    "XCII",
-    "XCIII",
-    "XCIV",
-    "XCV",
-    "XCVI",
-    "XCVII",
-    "XCVIII",
-    "XCIX",
-    "C",
-  ];
-
   if (numb >= 0) {
     for (let i = 0; i < romanNumbers.length; i++) {
       return romanNumbers[numb];
@@ -231,6 +128,7 @@ function makeRomaninanNumber(numb) {
   } else return romanNumbers[0];
 }
 
+// проверяем не смешиваются ли арабские цифры с римскими
 function isItnormalString(string) {
   let arr = string.split(" ");
   if (isArabianNumb(arr[0]) !== isArabianNumb(arr[2])) {
@@ -239,49 +137,72 @@ function isItnormalString(string) {
   }
 }
 
-// main calculator script
-function calculator(string) {
-  // проверяем не пустая ли строка
+// проверяем не пустая ли строка
+function isItEmpty(string) {
   if (string == "" || string == " " || string == "     ") {
     console.log("Вы вводите пустую строку");
     return;
   }
+}
 
-  isItnormalString(string);
-
-  // переводим аргумент в массив
-  let arr = string.split(" ");
-  // проверяем на количество введенных данных
-  if (arr.length < 3 || arr.length > 3) {
+// проверяем две ли у нас переменных
+function isItRightLength(array) {
+  if (array.length < 3 || array.length > 3) {
     console.log(
       `Введите значение в таком формате:  4 + 4  
 Обратите внимание на пробелы, допустимо только две переменные`
     );
     return;
   }
-  if (arr.includes("%") || arr.includes("0")) {
-    console.log("Операции с % не выполняются. Операции с нулём не выполняются");
+}
+
+// проверяем нет ли в функции 0 и %
+function isItAvailable(array, value1, value2) {
+  if (array.includes(value1) || array.includes(value2)) {
+    console.log("Операции с 0 и % не выполняются");
     return;
   }
+}
 
-  for (let el of arr) {
-    if (isArabianNumb(el)) {
-      if (el > 10) {
+function isItMoreThan(digitsArr, numb) {
+  for (let digit of digitsArr) {
+    if (isArabianNumb(digit)) {
+      if (digit > numb) {
         console.log("Арабская переменная не должна быть больше 10");
         return;
       }
     }
-    if (!isArabianNumb(el)) {
-      if (Number(takeArabicNumber(el)) > 10) {
+    if (!isArabianNumb(digit)) {
+      if (Number(takeArabicNumber(digit)) > numb) {
         console.log("Римская переменная не должна быть больше 10");
         return;
       }
     }
   }
+}
+
+// main calculator script
+function calculator(string) {
+  isItEmpty(string);
+
+  // проверяем не смешаны ли римские цифры с арабскими
+  isItnormalString(string);
+
+  // переводим аргумент в массив
+  let arr = string.split(" ");
+
+  // проверяем на количество введенных данных
+  isItRightLength(arr);
+
+  // проверяем нет ли в функции 0 и %
+  isItAvailable(arr, "%", "0");
+
+  // проверяем не больше ли значения 10
+  isItMoreThan(arr, 10);
 
   for (let elem of arr) {
+    // проверяем каждый элемент массива на арабские цифры
     if (isArabianNumb(elem)) {
-      // проверяем каждый элемент массива на арабские цифры
       // Сложение десятичных чисел
       if (arr.includes("+")) {
         return String(Number(arr[0]) + Number(arr[2]));
@@ -299,6 +220,7 @@ function calculator(string) {
         return String(Math.trunc(Number(arr[0]) / Number(arr[2])));
       }
     }
+
     // проверяем каждый элемент массива на римские цифры
     if (!isArabianNumb(elem)) {
       // Сложение римских чисел
