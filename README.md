@@ -32,3 +32,54 @@ calculate('1 + 1 + 1'); // вернётся исключение throws Error т
 ```
 
 ---
+
+// Сложение десятичных чисел
+// console.log(calculator("1 + 1"));
+// console.log(calculator("1 + 2"));
+// console.log(calculator("4 + 3"));
+// console.log(calculator("10 + 10"));
+
+// Вычитание десятичных чисел
+// console.log(calculator("10 - 1"));
+// console.log(calculator("5 - 4"));
+// console.log(calculator("4 - 4"));
+// console.log(calculator("1 - 10"));
+// console.log(calculator("4 - 5"));
+
+// Уможение десятичных чисел
+// console.log(calculator("10 _ 10"));
+// console.log(calculator("4 _ 10"));
+// console.log(calculator("5 _ 1"));
+// console.log(calculator("5 _ 5"));
+
+// Деление десятичных чисел
+// console.log(calculator("10 / 1"));
+// console.log(calculator("6 / 2"));
+// console.log(calculator("5 / 4"));
+// console.log(calculator("2 / 4"));
+
+// Сложение римских чисел
+// console.log(calculator("I + I"));
+// console.log(calculator("I + II"));
+// console.log(calculator("IV + III"));
+// console.log(calculator("X + X"));
+// console.log(calculator("X + IX"));
+
+// Вычитание римских чисел
+// console.log(calculator("X - I"));
+// console.log(calculator("V - IV"));
+// console.log(calculator("IV - IV"));
+// console.log(calculator("I - X"));
+// console.log(calculator("IV - V"));
+
+// Умножение римских чисел
+// console.log(calculator("X _ X"));
+// console.log(calculator("IV _ X"));
+// console.log(calculator("V _ I"));
+// console.log(calculator("V _ V"));
+
+// Деление римских чисел
+// console.log(calculator("X / I"));
+// console.log(calculator("VI / II"));
+// console.log(calculator("V / IV"));
+// console.log(calculator("II / IV"));
