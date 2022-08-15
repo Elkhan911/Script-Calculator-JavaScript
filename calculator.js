@@ -239,6 +239,8 @@ function calculator(string) {
     return;
   }
 
+  isItnormalString(string);
+
   // переводим аргумент в массив
   let arr = string.split(" ");
   console.log(arr);
@@ -250,8 +252,8 @@ function calculator(string) {
     );
     return;
   }
-  if (arr.includes("%")) {
-    console.log("Операции с % не выполняются");
+  if (arr.includes("%") || arr.includes("0")) {
+    console.log("Операции с % не выполняются. Операции с нулём не выполняются");
     return;
   }
 
@@ -324,23 +326,10 @@ function calculator(string) {
   }
 }
 
-// Ошибки данных
-//console.log(calculator(""));
-//console.log(calculator(" "));
-//console.log(calculator("     "));
-// console.log(calculator("4"));
-// console.log(calculator("+"));
-// console.log(calculator("++1"));
-//console.log(calculator("V"));
-// console.log(calculator("3 % 4"));
-// console.log(calculator("1 + 1 + 1"));
-// console.log(calculator("11 + 1"));
-// console.log(calculator("1 + 11"));
-// console.log(calculator("XI + I"));
-//console.log(calculator("I + XI"));
-
-// console.log(calculator("1 + V"));
-// console.log(calculator("I + 1"));
-// console.log(calculator("5 / 0"));
-// console.log(calculator("0 + 1"));
-// console.log(calculator("1 + 0"));
+function isItnormalString(string) {
+  let arr = string.split(" ");
+  if (isArabianNumb(arr[0]) !== isArabianNumb(arr[2])) {
+    console.log("нельзя смешивать род переменных");
+    return;
+  }
+}

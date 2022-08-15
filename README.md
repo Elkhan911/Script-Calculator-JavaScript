@@ -33,6 +33,27 @@ calculate('1 + 1 + 1'); // вернётся исключение throws Error т
 
 ---
 
+// Ошибки данных
+//console.log(calculator(""));
+//console.log(calculator(" "));
+//console.log(calculator(" "));
+// console.log(calculator("4"));
+// console.log(calculator("+"));
+// console.log(calculator("++1"));
+//console.log(calculator("V"));
+// console.log(calculator("3 % 4"));
+// console.log(calculator("1 + 1 + 1"));
+// console.log(calculator("11 + 1"));
+// console.log(calculator("1 + 11"));
+// console.log(calculator("XI + I"));
+//console.log(calculator("I + XI"));
+// console.log(calculator("5 / 0"));
+// console.log(calculator("0 + 1"));
+// console.log(calculator("1 + 0"));
+
+// console.log(calculator("1 + V"));
+// console.log(calculator("I + 1"));
+
 // Сложение десятичных чисел
 // console.log(calculator("1 + 1"));
 // console.log(calculator("1 + 2"));
