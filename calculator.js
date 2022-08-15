@@ -111,6 +111,8 @@ function takeArabicNumber(romanNumb) {
   }
 }
 
+// console.log(takeArabicNumber("XV"));
+
 // boolean function to determine arabic digit or not
 function isArabianNumb(numb) {
   let newArr = String(numb).split("");
@@ -119,7 +121,10 @@ function isArabianNumb(numb) {
   } else return true;
 }
 
-// function to convert Roman numerals from 1 to 10 to Arabic digits
+// console.log(isArabianNumb("10"));
+// console.log(isArabianNumb("X"));
+
+// function to convert arabian digits to arabic digits
 function makeRomaninanNumber(numb) {
   if (numb >= 0) {
     for (let i = 0; i < romanNumbers.length; i++) {
@@ -127,6 +132,8 @@ function makeRomaninanNumber(numb) {
     }
   } else return romanNumbers[0];
 }
+
+// console.log(makeRomaninanNumber(10));
 
 // проверяем не смешиваются ли арабские цифры с римскими
 function isItnormalString(string) {
@@ -137,6 +144,8 @@ function isItnormalString(string) {
   }
 }
 
+// isItnormalString("1 + X");
+
 // проверяем не пустая ли строка
 function isItEmpty(string) {
   if (string == "" || string == " " || string == "     ") {
@@ -144,6 +153,8 @@ function isItEmpty(string) {
     return;
   }
 }
+
+// isItEmpty(" ");
 
 // проверяем две ли у нас переменных
 function isItRightLength(array) {
@@ -156,13 +167,19 @@ function isItRightLength(array) {
   }
 }
 
+// isItRightLength([1, 2, 3, 4]);
+// isItRightLength([1, 2]);
+
 // проверяем нет ли в массиве недопустимых значений
 function isItAvailable(array, value1, value2) {
   if (array.includes(value1) || array.includes(value2)) {
-    console.log("Операции с 0 и % не выполняются");
+    console.log(`Операции с ${value1} и ${value2} не выполняются`);
     return;
   }
 }
+
+// isItAvailable([1, 2, 0], "%", 0);
+// isItAvailable([1, 2, 3], 1, 0);
 
 // проверяем нет ли цифр больше чем допустимая для задания
 function isItMoreThan(digitsArr, numb) {
@@ -182,6 +199,9 @@ function isItMoreThan(digitsArr, numb) {
   }
 }
 
+// isItMoreThan(["1", "+", "11"], 10);
+// isItMoreThan(["X", "+", "XX"], 10);
+
 // выбор арифметической операции с арабскими цифрами
 function selectArithmOperatArabian(array) {
   if (array.includes("+")) {
@@ -200,6 +220,9 @@ function selectArithmOperatArabian(array) {
     return String(Math.trunc(Number(array[0]) / Number(array[2])));
   }
 }
+
+// console.log(selectArithmOperatArabian(["1", "+", "5"]));
+// console.log(selectArithmOperatArabian(["10", "+", "2"]));
 
 // выбор арифметической операции с римскими цифрами
 function selectArithmOperatRomanian(array) {
@@ -232,6 +255,9 @@ function selectArithmOperatRomanian(array) {
     );
   }
 }
+
+// console.log(selectArithmOperatRomanian(["X", "+", "I"]));
+// console.log(selectArithmOperatRomanian(["X", "-", "I"]));
 
 // main calculator script
 function calculator(string) {
@@ -273,5 +299,3 @@ function calculator(string) {
     selectArithmOperatRomanian(arr);
   }
 }
-
-console.log(calculator("10 + 5"));
