@@ -241,7 +241,7 @@ function selectArithmOperatRomanian(array) {
     );
   }
   // Умножение римских чисел
-  if (arr.includes("*")) {
+  if (array.includes("*")) {
     // приводим к римскому значению
     return makeRomaninanNumber(
       takeArabicNumber(array[0]) * takeArabicNumber(array[2])
@@ -300,4 +300,16 @@ function calculator(string) {
   }
 }
 
-console.log(calculator("1 + 1"));
+// console.log(calculator("1 + 1"));
+
+// Умножение римских чисел
+// console.log(calculator("X * X"));
+// console.log(calculator("IV * X"));
+// console.log(calculator("V * I"));
+// console.log(calculator("V * V"));
+
+// Деление римских чисел
+console.log(calculator("X / I"));
+console.log(calculator("VI / II"));
+console.log(calculator("V / IV"));
+console.log(calculator("II / IV"));
