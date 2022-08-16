@@ -124,7 +124,7 @@ function isArabianNumb(numb) {
 // console.log(isArabianNumb("10"));
 // console.log(isArabianNumb("X"));
 
-// convert arabian numerals to arabic numerals
+// convert arabian numerals form 1 to 100 to roman numerals
 function makeRomaninanNumber(numb) {
   if (numb >= 0) {
     for (let i = 0; i < romanNumbers.length; i++) {
@@ -223,28 +223,28 @@ function selectArithmOperatArabian(array) {
 function selectArithmOperatRomanian(array) {
   // addition of two roman numbers
   if (array.includes("+")) {
-    // convert to roman number
+    // convert result to roman number
     return makeRomaninanNumber(
       takeArabicNumber(array[0]) + takeArabicNumber(array[2])
     );
   }
   // subtraction of two roman numbers
   if (array.includes("-")) {
-    // convert to roman number
+    // convert result to roman number
     return makeRomaninanNumber(
       takeArabicNumber(array[0]) - takeArabicNumber(array[2])
     );
   }
   // multiplication of two roman numbers
   if (array.includes("*")) {
-    // convert to roman number
+    // convert result to roman number
     return makeRomaninanNumber(
       takeArabicNumber(array[0]) * takeArabicNumber(array[2])
     );
   }
   // division of two roman numbers
   if (array.includes("/")) {
-    // convert to roman number
+    // convert result to roman number
     return makeRomaninanNumber(
       Math.trunc(takeArabicNumber(array[0]) / takeArabicNumber(array[2]))
     );
