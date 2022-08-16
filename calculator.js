@@ -274,25 +274,25 @@ function calculator(string) {
   // check if the value is greater than allowed
   isItMoreThan(arr, 10);
 
-  // variable for Arabic numeral (true) or Roman numeral (false)
-  let flag;
-  flag == true;
+  // variable for arabic numeral (true) or roman numeral (false)
+  let isArabian;
+  isArabian == true;
 
   for (let elem of arr) {
     if (isArabianNumb(elem)) {
-      flag = true;
+      isArabian = true;
     } else {
-      flag = false;
+      isArabian = false;
     }
   }
 
   // if arabic numerals then apply function for arabic numerals
-  if (flag == true) {
+  if (isArabian == true) {
     return selectArithmOperatArabian(arr);
   }
 
   // if roman numerals then apply function for roman numerals
-  if (flag == false) {
+  if (isArabian == false) {
     return selectArithmOperatRomanian(arr);
   }
 }
