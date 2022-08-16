@@ -299,17 +299,3 @@ function calculator(string) {
     return selectArithmOperatRomanian(arr);
   }
 }
-
-// console.log(calculator("1 + 1"));
-
-// Умножение римских чисел
-// console.log(calculator("X * X"));
-// console.log(calculator("IV * X"));
-// console.log(calculator("V * I"));
-// console.log(calculator("V * V"));
-
-// Деление римских чисел
-console.log(calculator("X / I"));
-console.log(calculator("VI / II"));
-console.log(calculator("V / IV"));
-console.log(calculator("II / IV"));
