@@ -291,11 +291,13 @@ function calculator(string) {
 
   // если арабские цифры применяем функцию для арабских цифр
   if (flag == true) {
-    selectArithmOperatArabian(arr);
+    return selectArithmOperatArabian(arr);
   }
 
   // если римские цифры применяем функцию для римских цифр
   if (flag == false) {
-    selectArithmOperatRomanian(arr);
+    return selectArithmOperatRomanian(arr);
   }
 }
+
+console.log(calculator("1 + 1"));
